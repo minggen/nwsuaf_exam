@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+
+<title>答辩-ppt</title>
+
+<meta name="description"
+	content="A framework for easily creating beautiful presentations using HTML">
+<meta name="author" content="Hakim El Hattab">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style"
+	content="black-translucent">
+
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<link rel="stylesheet" href="css/reveal.css">
+<link rel="stylesheet" href="css/theme/white.css" id="theme">
+
+<!-- Theme used for syntax highlighting of code -->
+<link rel="stylesheet" href="lib/css/zenburn.css">
+
+<!-- Printing and PDF exports -->
+<script>
+	var link = document.createElement('link');
+	link.rel = 'stylesheet';
+	link.type = 'text/css';
+	link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css'
+			: 'css/print/paper.css';
+	document.getElementsByTagName('head')[0].appendChild(link);
+</script>
+
+<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+</head>
+
+<body>
+
+	<div class="reveal">
+
+		<!-- Any section element inside of this container is displayed as a slide -->
+		<div class="slides">
+			<section>
+				<h1>在线考试系统</h1>
+				<h3>软件工程1501</h3>
+			<!-- 	<p>
+					<small>Look <a href="http://exam.wmgblog.pw"</a>
+					</small>
+				</p> -->
+			</section>
+
+			<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
+				<section>
+					<h2>小组成员</h2>
+					<div style="float: left;">
+						<h4 style="float: left; margin-top: 20px;">王明根</h4>
+						<small style="text-align: left; margin-left: 40px;">需求分析，数据库设计，前端页面设计，部分文档编写，前端页面编码，前后端整合</small>
+					</div>
+					<div style="float: left;">
+						<h4 style="float: left; margin-top: 20px;">朱丹</h4>
+						<small style="text-align: left; margin-left: 40px;">参与需求分析，完成用例图，参与总体设计，教师模块设计，学生登录页面设计及测试</small>
+					</div>
+
+					<div style="float: left;">
+						<h4 style="float: left; margin-top: 20px;">韩晴</h4>
+						<small style="text-align: left; margin-left: 40px;">需求分析文字部分，设计分析教师模块，考试提交页面，测试用例管理员教师登录部分</small>
+					</div>
+				</section>
+				<section>
+					<div style="float: left;">
+						<h4 style="float: left; margin-top: 20px;">李柯君</h4>
+						<small style="text-align: left; margin-left: 40px;">数据库的设计,后端开发，ssh框架的搭建,代码的书写，dao层，service层，aciton层实现,前后端数据交互接口整合
+						</small>
+					</div>
+					<div style="float: left;">
+						<h4 style="float: left; margin-top: 20px;">齐丽丽</h4>
+						<small style="text-align: left; margin-left: 40px;">学生设计部分文档的编写
+							参与系统功能的分析讨论 新建考试界面的编写 学生效果PPT 编写增加单多选题判断题测试的用例 总和组员的测试用例报告 </small>
+					</div>
+					<div style="float: left;">
+						<h4 style="float: left; margin-top: 20px;">韩硕</h4>
+						<small style="text-align: left; margin-left: 40px;">管理员部分设计文档的编写和设计文档的整理；参与系统功能的分析讨论；参与数据库部分的设计；部分网页的设计和前端代码的编写；教师的单个导入学生功能的测试；
+						</small>
+					</div>
+				</section>
+
+				<section>
+					<div style="float: left;">
+						<h4 style="float: left; margin-top: 20px;">宋道航</h4>
+						<small style="text-align: left; margin-left: 40px;">完善需求分析说明书内容及格式，完善设计文档部分内容及格式，参与总体设计及部分设计的分析讨论，测试登录界面与题库方面测试，编写相关测试文档
+						</small>
+					</div>
+					<div style="float: left;">
+						<h4 style="float: left; margin-top: 20px;">欧阳杨</h4>
+						<small style="text-align: left; margin-left: 40px;">参与试题上传模块设计，提供可以下载的试题模板文件，并将上传的试题文件数据导入至数据库中，</small>
+					</div>
+					<div style="float: left;">
+						<h4 style="float: left; margin-top: 20px;">刘洋</h4>
+						<small style="text-align: left; margin-left: 40px;">参与系统功能分析的讨论。参与网页前端设计。编写文档，并对学生功能进行测试。</small>
+					</div>
+				</section>
+			</section>
+
+
+			<section  >
+				<section data-transition="slide" data-background="#b5833c"  data-background-transition="zoom">
+					<h2>总体设计</h2>
+					<p style="text-align: left">使用JavaEE语言中hibernat、Struts进行数据的后台读入和页面显示，实体类和数据库进行关联，MySQL数据库对数据进行永久存储</p>
+				</section>
+				<section  data-transition="slide" data-background="#b5833c"  data-background-transition="concave">
+					<h2>总体设计</h2>
+					<p style="text-align: left">
+						采用了分层化模块设计，以系统公用数据库为操作对象，将整个系统划分为教师管理模块、管理员模块、考生管理模块。</p>
+				</section>
+				<section  data-transition="slide"  data-background="#b58330" data-background-transition="zoom">
+					<h2>总体设计</h2>
+					<p style="text-align: left">将不同用户通过登陆进入的页面加以区分并将试题等数据操作封装到不同的实体类中；将对数据库和数据表的操作也封装来；再定义用户界面调用这些方法实现对应模块的相关功能。
+					</p>
+				</section>
+			</section>
+
+			<section  data-transition="slide"  data-background="#b58354" data-background-transition="zoom">
+				<h2>总体设计</h2>
+				<img alt="" src="./img/ztsj.png">
+			</section>
+
+		
+				<section data-transition="slide" data-background="#b5530c" data-background-transition="zoom">
+					<h2>学生部分</h2>
+					<p style="text-align: left;">
+						对于这个系统而言，学生功能单一。学生在此系统中主要的功能有： <br>1.登录到系统 <br />2.选择相应的考试进入
+						<br />3.考试 <br />4.浏览考试成绩
+
+					</p>
+				</section>
+
+
+
+				<section data-transition="slide" data-background="#b5503c" data-background-transition="zoom">
+					<h2>教师部分</h2>
+					<div>
+						<div
+							style="float: left; width: 50%; height: 300px; text-align: left;">
+							此考试的初衷是减轻教师的工作压力，为教师的工作带来便利。因此，教师在此系统中主要的功能有： <br />1.维护题库<br />
+							2.安排考试 <br /> 3.导入学生信息 <br /> 4.查看学生各项考试的结果统计
+						</div>
+						<div style="float: right; width: 50%; height: 500px;">
+							<img src="img/teacher.png" alt="" />
+						</div>
+					</div>
+				</section>
+
+				<section data-transition="slide" data-background="#b5833c" data-background-transition="zoom">
+					<h2>教师部分</h2>
+					<div>
+						<div
+							style="float: left; width: 50%; height: 300px; text-align: left;">
+							导入学生信息，可分为批量导入和单个添加。在添加考试之后，选择考试的场次向其中添加学生信息，在学生登录选择考试下拉菜单中可以找到相关的考试场次。
+						</div>
+						<div
+							style="float: right; width: 50%; height: 500px; text-align: left;">
+							<img src="img/teacher2.png" alt="" /> <br />考试结束后对学生考试情况进行统计，显示题型的正确率，可用图表形式显示。
+						</div>
+					</div>
+
+				</section>
+
+				<section data-transition="slide" data-background="#b55300" data-background-transition="zoom">
+					<h2>教师部分</h2>
+					<div>
+						<div
+							style="float: left; width: 50%; height: 300px; text-align: left;">
+							教师将题目添加到系统数据库中，这里分为两种方式：<br />1.批量导入 <br />2.单个添加 <img
+								src="img/student1.png" alt="" />
+						</div>
+						<div
+							style="float: right; width: 50%; height: 500px; text-align: left;">
+							<img src="img/student2.png" alt="" /> 教师将题目添加到系统数据库中，这里分为两种方式：<br />
+							1.批量导入<br /> 2.单个添加
+
+						</div>
+					</div>
+
+				</section>
+
+	
+		
+				<section data-transition="slide" data-background="#b55350" data-background-transition="zoom">
+					<h2>管理员部分</h2>
+
+					<div style="text-align: left;">
+						管理员具有查看系统信息，系统日志，对系统某些参数进行修改，对老师进行增删改查，对科目进行补充，对自身信息进行修改</div>
+
+
+				</section>
+				
+				<section data-transition="slide" data-background="#b05350" data-background-transition="zoom">
+					<h2>面向接口编程</h2>
+					<h2>使用泛型</h2>
+					<h2>使用j2EE常用框架</h2>
+					<h2>使用前端框架</h2>
+				</section>
+				<section data-transition="slide" data-background="#b05350" data-background-transition="convex">
+
+					<img src="./img/jc2.png" alt="" width="600" height="500" /> <br />
+					<small>部分类图</small>
+				</section>
+
+				<section  data-transition="slide" data-background="#b05350" data-background-transition="convex">
+
+					<img src="./img/jc5.png" alt="" width="750" height="500" /> <br />
+					<small>部分类图</small>
+				</section>
+				<section data-markdown data-background="#b05350">
+
+					<script type="text/template">
+
+```				
+public interface IBaseDao<T> {
+	public void save(T o);
+	public void update(T o);
+	public void merge(T o);
+	public void delete(T o);
+	public T findById(Class<T> c, Serializable id) ;
+	public List<T> findAll(Class<T> c) ;
+	public List<T> findByHQL(String hqlString) ;
+	public List<T> findBySQL(String sqlString) ;
+	public int getCount(String hqlString);
+	public String getMax(String hqlString);
+	public void execute(String sql) ;
+	void DeleteBySQL(String hqlString);	
+}
+
+						```
+					</script>
+				</section>
+
+				<section  data-transition="slide" data-background="#b05350" data-background-transition="convex">
+
+					<img src="./img/jc.png" alt="" width="500" height="400" />
+					<br /> <small>接口的实现类</small>
+				</section>
+				
+				<!-- 
+				<section>
+					<section id="fragments">
+						<h2>Fragments</h2>
+						<p>Hit the next arrow...</p>
+						<p class="fragment">... to step through ...</p>
+						<p>
+							<span class="fragment">... a</span> <span class="fragment">fragmented</span>
+							<span class="fragment">slide.</span>
+						</p>
+
+						<aside class="notes">This slide has fragments which are
+							also stepped through in the notes window.</aside>
+					</section>
+					<section>
+						<h2>Fragment Styles</h2>
+						<p>There's different types of fragments, like:</p>
+						<p class="fragment grow">grow</p>
+						<p class="fragment shrink">shrink</p>
+						<p class="fragment fade-out">fade-out</p>
+						<p class="fragment fade-up">fade-up (also down, left and
+							right!)</p>
+						<p class="fragment current-visible">current-visible</p>
+						<p>
+							Highlight <span class="fragment highlight-red">red</span> <span
+								class="fragment highlight-blue">blue</span> <span
+								class="fragment highlight-green">green</span>
+						</p>
+					</section>
+				</section>
+
+				<section id="transitions">
+					<h2>Transition Styles</h2>
+					<p>
+						You can select from different transitions, like: <br> <a
+							href="?transition=none#/transitions">None</a> - <a
+							href="?transition=fade#/transitions">Fade</a> - <a
+							href="?transition=slide#/transitions">Slide</a> - <a
+							href="?transition=convex#/transitions">Convex</a> - <a
+							href="?transition=concave#/transitions">Concave</a> - <a
+							href="?transition=zoom#/transitions">Zoom</a>
+					</p>
+				</section>
+ -->
+					
+			
+
+
+			
+				<section  data-transition="slide" data-background="#b05350" data-background-transition="zoom">
+					<h2>THANKS</h2>
+					<p>
+						<h3>LOOK----><a href="http://exam.wmgblog.pw">go</a></h3>
+					</p>
+				</section>
+		</div>
+
+	</div>
+
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+
+	<script>
+		// More info https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			controls : true,
+			progress : true,
+			history : true,
+			center : true,
+
+			transition : 'slide', // none/fade/slide/convex/concave/zoom
+
+			// More info https://github.com/hakimel/reveal.js#dependencies
+			dependencies : [ {
+				src : 'lib/js/classList.js',
+				condition : function() {
+					return !document.body.classList;
+				}
+			}, {
+				src : 'plugin/markdown/marked.js',
+				condition : function() {
+					return !!document.querySelector('[data-markdown]');
+				}
+			}, {
+				src : 'plugin/markdown/markdown.js',
+				condition : function() {
+					return !!document.querySelector('[data-markdown]');
+				}
+			}, {
+				src : 'plugin/highlight/highlight.js',
+				async : true,
+				callback : function() {
+					hljs.initHighlightingOnLoad();
+				}
+			}, {
+				src : 'plugin/search/search.js',
+				async : true
+			}, {
+				src : 'plugin/zoom-js/zoom.js',
+				async : true
+			}, {
+				src : 'plugin/notes/notes.js',
+				async : true
+			} ]
+		});
+	</script>
+
+</body>
+</html>

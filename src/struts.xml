@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="default" namespace="/" extends="struts-default">
+		<global-results>
+			<result name="error">jsp/error.jsp</result>
+		</global-results>
+
+		<global-exception-mappings>
+			<exception-mapping exception="java.lang.Exception"
+				result="error" />
+		</global-exception-mappings>
+		
+		<action name="stuLogin" class="action.StuLoginAction">
+			<result name="success">/jsp/stu_login.jsp</result>
+			<result name="jump">/jsp/student/exam.jsp</result>
+			<result name="error">jsp/error.jsp</result>
+		</action>
+		<action name="stuShow" class="action.StuLoginAction" method="check">
+			<result name="success">jsp/student/ExamNotes.jsp</result>
+		</action>
+		
+		
+		
+		<action name="examsystem" class="action.LoginCheckAction" method="check">
+			<!-- 登录失败 -->
+			<result name="fail">jsp/ad_login.jsp?fail=true</result>
+			<!--如果是老师 -->
+			<result name="teacher">jsp/teacher.jsp</result>
+
+			<!--如果是管理员 -->
+			<result name="admin">jsp/admin.jsp</result>
+		</action>
+
+		<action name="showAnswer" class="action.StuAnswerAction" method="showAnswer">
+			<result name="ok">jsp/student/score.jsp</result>
+		</action>
+
+		<action name="newExam" class="action.TeacherNewExamAction">
+			<result name="ok">
+				jsp/teacher.jsp?op=newexam<!-- &op=newexam -->
+			</result>
+			<result name="error">jsp/teacher.jsp?op=newexam</result>
+		</action>
+
+		<action name="questionslist" class="action.TeacherAction"
+			method="questionslist">
+			<result name="ok">jsp/teacher.jsp?op=questionslist</result>
+		</action>
+
+		<action name="add_one_radio" class="action.TeacherAction"
+			method="add_one_radio">
+			 <result name="ok">jsp/teacher.jsp?op=success</result>
+            <result name="error">jsp/teacher.jsp?op=error</result>  
+		</action>
+
+
+		<action name="add_one_checkbox" class="action.TeacherAction"
+			method="add_one_checkbox">
+			 <result name="ok">jsp/teacher.jsp?op=success</result>
+            <result name="error">jsp/teacher.jsp?op=error</result>  
+		</action>
+
+
+		<action name="trueorfalse" class="action.TeacherAction" method="trueorfalse">
+			 <result name="ok">jsp/teacher.jsp?op=success</result>
+            <result name="error">jsp/teacher.jsp?op=error</result>  
+		</action>
+		<action name="importstudent" class="action.TeacherAction"
+			method="importstudent">
+			 <result name="ok">jsp/teacher.jsp?op=success</result>
+            <result name="error">jsp/teacher.jsp?op=error</result>  
+		</action>
+
+		
+	</package>
+
+
+	<!-- 配置上传大小限制：10M -->
+	<constant name="struts.multipart.maxSize" value="10485760"></constant>
+	<package name="upload_down" namespace="/" abstract="false" extends="struts-default">
+
+		<action name="importstudents" class="action.TeacherUpStuAction" >  
+            <!-- 上传成功 -->
+            <result name="success">jsp/teacher.jsp?op=success</result>
+            <result name="error">jsp/teacher.jsp?op=error</result>  
+        </action>  
+        
+        
+        <action name="singleUploadAction" class="action.TeacherSingleUpAction" >  
+            <!-- 上传成功 -->
+            <result name="success">jsp/teacher.jsp?op=success</result>
+            <result name="error">jsp/teacher.jsp?op=error</result>  
+        </action>  
+        
+          <action name="mutiUploadAction" class="action.TeacherMutiUpAction" >  
+            <!-- 上传成功 -->
+              <result name="success">jsp/teacher.jsp?op=success</result>
+            <result name="error">jsp/teacher.jsp?op=error</result>  
+        </action>  
+        
+         <action name="tofUploadAction" class="action.TeacherTofUpAction" >  
+            <!-- 上传成功 -->
+              <result name="success">jsp/teacher.jsp?op=success</result>
+            <result name="error">jsp/teacher.jsp?op=error</result>  
+        </action>
+        
+           <action name="exit_*" class="action.ExitAction"  method="{1}">  
+            <!-- 注销成功 -->
+              <result name="index" type="redirect">/jsp/ad_login.jsp</result>
+              <result name="student" type="redirect">/jsp/stu_login.jsp</result>
+           
+        </action>
+        
+        <action name="studenttable" class="action.TeachertShowStuAction"  >  
+            <!-- 注销成功 -->
+              <result name="result">jsp/teacher.jsp?op=tableresult</result>       
+        </action>
+        
+        
+         <action name="picaction" class="action.TeacherPicAction"  >  
+            <!-- 注销成功 -->
+              <result name="picresult">jsp/teacher.jsp?op=picresult</result>
+ 				<!-- <result name="resultable">jsp/teacher.jsp?op=resultableresult</result> -->       
+        </action>
+        
+        <action name="anexam" class="action.TeacherAnExamAction"  >  
+            <!-- 注销成功 -->
+              <result name="result">jsp/teacher.jsp?op=anexamresult</result>
+        </action>
+        
+        <action name="lookupexamlist" class="action.TeacherExamListAction"  >  
+              <result name="result">jsp/teacher.jsp?op=lookupexamlist</result>
+        </action>
+        
+         <action name="system_*" class="action.AdminSystemAction"  method="{1}">  
+              <result name="success">jsp/admin.jsp?op=systemsetting</result>
+        </action>
+        
+        <action name="teacherList" class="action.AdminTeacherListAction">  
+              <result name="success">jsp/admin.jsp?op=teacherslist</result>
+        </action>
+        <action name="teacherAdd" class="action.AdminAddTeacherAction">  
+              <result name="success">jsp/admin.jsp?op=addteacher</result>
+        </action>
+        <action name="change_*" class="action.AdminChangeInfoAction" method="{1}">  
+              <result name="getsuccess">jsp/admin.jsp?op=changeinfo</result>
+              <result name="success">jsp/admin.jsp?op=changeinfo</result>
+        </action>
+        
+        <action name="delete_*" class="action.DeleteAction" method="{1}">  
+              <result name="success" type="redirect">teacherList</result>
+              <result name="question" type="redirect">questionslist</result>
+        </action>
+        <action name="subjectAdd" class="action.AdminNewSubject" method="newSubject">  
+             
+              <result name="success">jsp/admin.jsp?op=addsubject</result>
+        </action>
+        
+	</package>
+
+</struts>
